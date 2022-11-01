@@ -60,37 +60,29 @@
         </section>
         <!-- START CARDS -->
         <section class="cards">
-            <div class="card left">
-                <div class="card-word">
-                    <div class="card-title">
-                        <h2>Grow Together</h2>
+
+            <asp:Repeater ID="RepeaterPost" runat="server">
+                <ItemTemplate>
+                    <div class="card">
+                        <div class="card-word">
+                            <div class="card-title">
+                                <h2>
+                                    <asp:Label ID="Label5" runat="server" Text='<%# Eval("TitleInPost") %>'></asp:Label>
+                                </h2>
+                            </div>
+                            <div class="card-info">
+                                <p>
+                                    <asp:Label ID="Label6" runat="server" Text='<%# Eval("DescriptionInPost") %>'></asp:Label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-image">
+                            <img src='<%#Eval("ImageUrlInPost") %>' alt="">
+                        </div>
                     </div>
-                    <div class="card-info">
-                        <p>
-                            Generate meaningful discussions with your audience and build a strong, loyal community. Think of the insightful conversations you miss out on with a feedback form.
-                        </p>
-                    </div>
-                </div>
-                <div class="card-image">
-                    <img src="FrontEnd/assets/images/illustration-grow-together.svg" alt="">
-                </div>
-            </div>
-            <div class="card right">
-                <div class="card-image">
-                    <img src="FrontEnd/assets/images/illustration-flowing-conversation.svg" alt="">
-                </div>
-                <div class="card-word">
-                    <div class="card-title">
-                        <h2>Flowing Conversations</h2>
-                    </div>
-                    <div class="card-info">
-                        <p>
-                            You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.
-                        </p>
-                    </div>
-                </div>
-            </div>
-          
+                </ItemTemplate>
+            </asp:Repeater>
+
         </section>
         <!-- END CARDS -->
     </main>
@@ -162,7 +154,7 @@
 
         <div class="copyright">
             <p>
-                &#169; Copyright  2018 Huddle.All rights reserved.
+                &#169; Copyright  2022 Huddle.All rights reserved.
             </p>
         </div>
     </footer>

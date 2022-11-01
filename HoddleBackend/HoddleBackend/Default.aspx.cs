@@ -11,17 +11,25 @@ namespace HoddleBackend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSetTableAdapters.HeadersTableAdapter dtHeader = new DataSetTableAdapters.HeadersTableAdapter();
+            DataSetHoddleTableAdapters.HeadersTableAdapter dtHeader = new DataSetHoddleTableAdapters.HeadersTableAdapter();
             RepeaterHeader.DataSource = dtHeader.GetHeadersData();
             RepeaterHeader.DataBind();
 
-            DataSetTableAdapters.ContactsTableAdapter dtContact = new DataSetTableAdapters.ContactsTableAdapter();
+
+            DataSetHoddleTableAdapters.ContactsTableAdapter dtContact = new DataSetHoddleTableAdapters.ContactsTableAdapter();
             RepeaterContact.DataSource = dtContact.GetContactsData();
             RepeaterContact.DataBind();
 
-            DataSetTableAdapters.IconsTableAdapter dtIcon = new DataSetTableAdapters.IconsTableAdapter();
+
+            DataSetHoddleTableAdapters.PostsTableAdapter dtPost = new DataSetHoddleTableAdapters.PostsTableAdapter();
+            RepeaterPost.DataSource = dtPost.GetPostsData();
+            RepeaterPost.DataBind();
+
+            DataSetHoddleTableAdapters.IconsTableAdapter dtIcon = new DataSetHoddleTableAdapters.IconsTableAdapter();
             RepeaterIcon.DataSource = dtIcon.GetIconsData();
             RepeaterIcon.DataBind();
+
+            
         }
     }
 }
